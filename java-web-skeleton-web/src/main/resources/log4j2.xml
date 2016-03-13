@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="OFF" monitorInterval="1800">
+    <appenders>
+	    <!-- ==================================== -->
+	    <!-- Append debug messages to the console -->
+	    <!-- ==================================== -->    
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{DEFAULT} [%t] %-5level %logger{36} - %msg%n"/>
+            <ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY"/>
+        </Console>
+
+
+        
+    </appenders>
+    
+    <loggers>
+
+	    <!-- ======================================= -->
+	    <!-- 默认的日志输出                                                                                             -->
+	    <!-- ======================================= -->  
+        <root level="DEBUG">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </loggers>
+</configuration>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--<classPathEntry/-->
+            <!--location="F:\resources\maven-repo\mysql\mysql-connector-java\5.1.36\mysql-connector-java-5.1.36.jar"/>-->
+    <context id="dmmyTables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="false"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!--<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"-->
+                        <!--connectionURL="jdbc:oracle:thin:@192.168.1.96:1521:orcl"-->
+                        <!--userId="ods"-->
+                        <!--password="ZG#teWVkd6Hj"/>-->
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://192.168.1.39:3306/test?useUnicode=true&amp;characterEncoding=utf-8"
+        userId="dmmy_java"
+        password="sdadf123x21sza1s122"/>
+
+        <!-- 生成的实体类放哪个包下-->
+        <javaModelGenerator targetPackage="com.xulf.skeleton.web.domain"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- mapping文件放到哪个文件夹写-->
+        <sqlMapGenerator targetPackage="mappings"
+                         targetProject="src/main/resources/">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- mapper文件放哪个包下-->
+        <javaClientGenerator targetPackage="com.xulf.skeleton.web.mapper"
+                             targetProject="src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <table tableName="test_table"
+               domainObjectName="TestTable"
+               enableInsert="true"
+               enableSelectByPrimaryKey="true"
+               enableUpdateByPrimaryKey="true"
+               enableDeleteByPrimaryKey="true"
+               selectByPrimaryKeyQueryId="true"
+               enableSelectByExample="false"
+               enableUpdateByExample="false"
+               enableCountByExample="false"
+               enableDeleteByExample="false"
+               selectByExampleQueryId="false">
+        </table>
+
+
+    </context>
+</generatorConfiguration>
